@@ -7,61 +7,105 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <TabHost
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Contact Creator"
-        android:id="@+id/creatorTitle"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10px"
-        android:layout_marginLeft="10px"
-        android:layout_marginTop="10px"
-        android:layout_marginRight="10px"
-        android:layout_marginBottom="10px"
-        android:paddingTop="20px"
-        android:paddingBottom="40px"
-        android:fontFamily="sans-serif-medium" />
+        android:id="@+id/tabHost"
+        android:layout_gravity="center_horizontal">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/contactName"
-        android:paddingTop="40px"
-        android:hint="Contact Name"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/contactPhoneNumber"
-        android:layout_marginTop="20px"
-        android:hint="Phone Number"/>
+            <TabWidget
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:id="@android:id/tabs"></TabWidget>
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/contactEmail"
-        android:layout_marginTop="20px"
-        android:hint="Email"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:ems="10"
-        android:id="@+id/contactAddress"
-        android:layout_marginTop="20px"
-        android:hint="Address"/>
-    <Button
-        android:layout_width="300px"
-        android:layout_height="110px"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/addButton"
-        android:text="Add Contact"
-        android:enabled="false" />
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="452dp">
+
+                <LinearLayout
+                    android:id="@+id/creatorTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Contact Creator"
+                        android:id="@+id/creatorTitle"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:paddingTop="20dp"
+                        android:paddingBottom="40dp"
+                        android:fontFamily="sans-serif-medium" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/contactName"
+                        android:paddingTop="40dp"
+                        android:hint="Contact Name"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:ems="10"
+                        android:id="@+id/contactPhoneNumber"
+                        android:layout_marginTop="20dp"
+                        android:hint="Phone Number"/>
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:inputType="textEmailAddress"
+                        android:ems="10"
+                        android:id="@+id/contactEmail"
+                        android:layout_marginTop="20dp"
+                        android:hint="Email"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPostalAddress"
+                        android:ems="10"
+                        android:id="@+id/contactAddress"
+                        android:layout_marginTop="20dp"
+                        android:hint="Address"/>
+
+                    <Button
+                        android:layout_width="300dp"
+                        android:layout_height="69dp"
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/addButton"
+                        android:text="Add Contact"
+                        android:enabled="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabContactList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
 </LinearLayout>

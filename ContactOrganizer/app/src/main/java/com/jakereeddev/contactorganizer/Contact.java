@@ -5,7 +5,7 @@ package com.jakereeddev.contactorganizer;
  */
 public class Contact {
 
-    private String _name, _phone, _email, _address;
+    private String _name, _email, _address, _phone;
 
     public Contact(String name, String phone, String email, String address){
         _name = name;
